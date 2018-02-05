@@ -1,4 +1,4 @@
-# Download and install Matlab Compiler Runtime v9.0 (2015b)
+# Download and install Matlab Compiler Runtime v9.3 (2017b)
 #
 # This docker file will configure an environment into which the Matlab compiler
 # runtime will be installed and in which stand-alone matlab routines (such as
@@ -23,8 +23,7 @@ RUN apt-get -q update && \
 RUN mkdir /mcr-install && \
     mkdir /opt/mcr && \
     cd /mcr-install && \
-    #wget -q http://ssd.mathworks.com/supportfiles/downloads/R2017b/deployment_files/R2017b/installers/glnxa64/MCR_R2017b_glnxa64_installer.zip && \
-    wget -q http://10.130.88.60:58080/files/Downloads/tmp/MCR_R2017b_glnxa64_installer.zip && \
+    wget -q http://ssd.mathworks.com/supportfiles/downloads/R2017b/deployment_files/R2017b/installers/glnxa64/MCR_R2017b_glnxa64_installer.zip && \
     unzip -q MCR_R2017b_glnxa64_installer.zip && \
     rm -f MCR_R2017b_glnxa64_installer.zip && \
     ./install -destinationFolder /opt/mcr -agreeToLicense yes -mode silent && \
